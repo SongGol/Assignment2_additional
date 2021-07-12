@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutHome"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/nestedScrollViewHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_everytime"
+            android:textColor="@color/dark_red"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:text="@string/home_kau"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="44dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/profile" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="44dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/imageButton"
+            app:srcCompat="@drawable/search"/>
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollViewHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutHome">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nestedScrollContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollContainer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="30dp">
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_border"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="5dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/vacation_chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginTop="65dp"
+                            android:text="자세히 >"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            app:srcCompat="@drawable/home_bulb" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@id/imageView6"
+                            android:layout_marginStart="10dp"
+                            android:text="방학에 뭐하지?"
+                            android:textColor="@android:color/black"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView3"
+                            android:layout_toEndOf="@id/imageView6"
+                            android:layout_marginStart="10dp"
+                            android:text="유익한 공모전, 대회활동 찾아보기"
+                            android:textColor="#FFC107" />
+                    </RelativeLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="320dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_border"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="320dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_border"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/grid_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:columnCount="7"
+                app:orientation="horizontal"
+                app:rowCount="2"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="57dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/kau_home_str"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_column="1"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:layout_width="57dp"
+                    android:layout_height="57dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="열람실\n현황"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_column="2"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:layout_width="57dp"
+                    android:layout_height="57dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="학사\n공지"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_column="3"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:layout_width="57dp"
+                    android:layout_height="57dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="학사\n일정"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_column="4"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:layout_width="57dp"
+                    android:layout_height="57dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="도서관"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_column="5"
+                    app:layout_row="1" />
+
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_column="1"
+                    app:layout_row="0"
+                    app:srcCompat="@drawable/home"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_column="2"
+                    app:layout_row="0"
+                    app:srcCompat="@drawable/library" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_column="3"
+                    app:layout_row="0"
+                    app:srcCompat="@drawable/notice" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_column="4"
+                    app:layout_row="0"
+                    app:srcCompat="@drawable/calender" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_column="5"
+                    app:layout_row="0"
+                    app:srcCompat="@drawable/library" />
+            </androidx.gridlayout.widget.GridLayout>
+
+            <TextView
+                android:id="@+id/adView"
+                android:text="AD"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@id/grid_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/favorite_bulletin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/custom_border"
+                app:layout_constraintTop_toBottomOf="@id/adView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/favorite_bulletin"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/favorite_bulletin_more"
+                        android:textColor="#79F31313"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+                <include layout="@layout/activity_favorite_bulletin_sub"/>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/popular_bulletin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/custom_border"
+                android:layout_margin="5dp"
+                app:layout_constraintTop_toBottomOf="@id/favorite_bulletin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/realtime_favorite"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+                    <include layout="@layout/activity_popular_sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <include layout="@layout/activity_popular_sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/suggest_ad"
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                app:layout_constraintTop_toBottomOf="@id/popular_bulletin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_border"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/suggest_info"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:text="AD"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/competition_bulletin_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/suggest_ad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="340dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/custom_border"
+                    android:layout_margin="5dp" >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/competition_bulletin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="공모전·대외활동"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/favorite_bulletin_more"
+                            android:textColor="#79F31313"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="60dp">
+
+                        <include layout="@layout/activity_competition_sub"
+                            />
+                        <include layout="@layout/activity_competition_sub" />
+                        <include layout="@layout/activity_competition_sub" />
+                        <include layout="@layout/activity_competition_sub" />
+                        <include layout="@layout/activity_competition_sub" />
+                        <include layout="@layout/activity_competition_sub" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
